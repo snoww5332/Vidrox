@@ -7,15 +7,30 @@
 <meta name="description" content="Vidrox especialista em arquitetura em vidro: esquadrias, fachadas, box, guarda-corpo, portas e espelhos em vidro temperado. Projeto, corte e instalacao proprios em Sao Paulo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('assets/Akira Expanded Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Liberation Sans';
+  src: url('assets/LiberationSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 :root{--ink:#080c10;--charcoal:#0e1318;--paper:#f0ede8;--stone:#7a838c;--stone-dark:#4e5660;--glass:#7ec8d8;--glass-dim:rgba(126,200,216,.5);--glass-glow:rgba(126,200,216,.12);--accent:#c8a96e;--line:rgba(255,255,255,.1);--line-soft:rgba(255,255,255,.06);--line-dark:rgba(10,14,19,.14);--ease-out:cubic-bezier(.2,.7,.2,1);--ease-in-out:cubic-bezier(.45,0,.55,1);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--ink);color:var(--paper);font-family:'Archivo',system-ui,sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{background:var(--ink);color:var(--paper);font-family:'Liberation Sans',system-ui,sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-.num{font-family:'Fraunces',Georgia,serif;font-weight:300}
+h1, h2, h3, h4, .brand b {font-family:'Akira Expanded',sans-serif;font-weight:normal;}
+.num{font-family:'Akira Expanded',sans-serif;font-weight:normal;}
 .mono{font-family:'Space Mono',monospace}
 @keyframes scroll-drop{0%{transform:translateY(-100%);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(260%);opacity:0}}
 @keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
@@ -46,39 +61,31 @@ img{display:block;max-width:100%}
 .nav .cta:hover{background:rgba(126,200,216,.12);border-color:var(--glass);color:#fff}
 @media(max-width:900px){.nav ul{display:none}.nav{padding:1.6rem 5vw}.nav.solid{padding:1rem 5vw}}
 /* HERO */
-.hero-wrap{position:relative;height:400vh}
-.hero-sticky{position:sticky;top:0;width:100vw;height:100vh;height:100dvh;overflow:hidden;background:var(--ink)}
-.hero-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
-.hero-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(8,12,16,.65) 0%,rgba(8,12,16,.04) 28%,rgba(8,12,16,.18) 60%,rgba(8,12,16,.92) 100%)}
-.hero-content{position:absolute;inset:0;z-index:3;padding:7vh 6vw 6vh;display:flex;flex-direction:column;justify-content:space-between}
-.hero-top{display:flex;justify-content:space-between;align-items:flex-start}
-.hero-tag{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);display:flex;align-items:center;gap:.7rem}
+.hero-wrap{position:relative;background:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:12vh 6vw 8vh;overflow:hidden;}
+.hero-content{position:relative;z-index:10;width:100%;max-width:1100px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-top{margin-bottom:2rem;}
+.hero-tag{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);display:inline-flex;align-items:center;gap:.7rem;}
 .hero-tag::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--glass);animation:pulse-ring 2.5s ease-out infinite;box-shadow:0 0 0 0 var(--glass-glow)}
-.hero-meta{text-align:right;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.06em;color:var(--stone);max-width:18rem;line-height:1.8}
-.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem}
-.hero-title-wrap{max-width:68rem}
-.hero-vline{width:1px;height:5rem;background:linear-gradient(180deg,transparent,var(--glass-dim),transparent);margin-bottom:1.8rem}
-h1.hero-h1{font-size:clamp(2.6rem,6.8vw,6rem);line-height:.96;font-weight:500;letter-spacing:-.02em}
-h1.hero-h1 .thin{font-weight:300;color:rgba(240,237,232,.42)}
+.hero-title-wrap{display:flex;flex-direction:column;align-items:center;max-width:48rem;}
+h1.hero-h1{font-size:clamp(1.8rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem;}
+h1.hero-h1 .thin{color:rgba(240,237,232,.6);}
+@keyframes color-theme-shift{0%,100%{color:inherit}50%{color:var(--glass)}}
+.animate-color-theme{display:inline-block;animation:color-theme-shift 4s ease-in-out infinite;animation-delay:.8s;}
 .hero-h1-line{display:block;overflow:hidden}
-.hero-h1-line span{display:block;animation:fade-up .9s var(--ease-out) both}
-.hero-h1-line:nth-child(2) span{animation-delay:.14s}
-.hero-sub{margin-top:1.8rem;max-width:36ch;color:rgba(240,237,232,.58);font-size:1rem;line-height:1.65;font-weight:300;animation:fade-up .9s .3s var(--ease-out) both}
-.hero-cta{pointer-events:auto;margin-top:2.4rem;display:inline-flex;align-items:center;gap:.8rem;font-size:.86rem;letter-spacing:.04em;color:var(--paper);animation:fade-up .9s .46s var(--ease-out) both;padding-bottom:.25rem;border-bottom:1px solid rgba(240,237,232,.22);transition:border-color .35s,color .35s}
-.hero-cta .arrow{transition:transform .4s var(--ease-out)}
-.hero-cta:hover{color:var(--glass);border-color:var(--glass)}
-.hero-cta:hover .arrow{transform:translateX(8px)}
-.scroll-ind{display:flex;flex-direction:column;align-items:center;gap:.75rem}
-.scroll-ind span{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.24em;color:var(--stone);writing-mode:vertical-rl}
-.scroll-ind .track{width:1px;height:3.5rem;background:var(--line);position:relative;overflow:hidden;border-radius:1px}
-.scroll-ind .track i{position:absolute;left:0;top:0;width:100%;height:40%;background:linear-gradient(180deg,transparent,var(--glass),transparent);animation:scroll-drop 2.4s ease-in-out infinite}
-.hero-progress{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--stone);letter-spacing:.06em;margin-top:.4rem}
-.hero-loading{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;background:var(--ink);flex-direction:column;gap:1.2rem;transition:opacity .7s ease}
-.hero-loading.hidden{opacity:0;pointer-events:none}
-.hero-loading span{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--stone)}
-.loading-bar{width:80px;height:1px;background:var(--line);position:relative;overflow:hidden}
-.loading-bar::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--glass);animation:fill-bar 1.8s ease forwards}
-@media(max-width:760px){.hero-meta{display:none}.hero-bottom{flex-direction:column;align-items:flex-start;gap:2rem}.scroll-ind{flex-direction:row}.scroll-ind span{writing-mode:horizontal-tb}}
+.hero-h1-line > span{display:block;animation:fade-up .9s var(--ease-out) both}
+.hero-h1-line:nth-child(2) > span{animation-delay:.14s}
+.hero-sub{color:rgba(240,237,232,.7);font-size:1.1rem;line-height:1.6;animation:fade-up .9s .3s var(--ease-out) both;}
+.hero-cta-group{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;animation:fade-up .9s .46s var(--ease-out) both;}
+.hero-cta{display:inline-flex;align-items:center;gap:.8rem;font-size:.9rem;letter-spacing:.04em;color:var(--ink);background:var(--paper);padding:.8rem 1.8rem;border-radius:40px;transition:background .3s,transform .3s;font-weight:600;}
+.hero-cta:hover{background:#fff;transform:translateY(-2px);}
+.hero-cta-outline{display:inline-flex;align-items:center;gap:.8rem;font-size:.9rem;letter-spacing:.04em;color:var(--paper);background:transparent;border:1px solid rgba(240,237,232,.3);padding:.8rem 1.8rem;border-radius:40px;transition:border-color .3s,background .3s;}
+.hero-cta-outline:hover{background:rgba(240,237,232,.05);border-color:var(--paper);}
+.hero-media-wrap{position:relative;width:100%;max-width:1000px;margin-top:4rem;animation:fade-up 1s .6s var(--ease-out) both;}
+.hero-media-wrap img{width:100%;height:auto;border-radius:8px;mask-image:radial-gradient(ellipse 95% 85% at center, black 50%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse 95% 85% at center, black 50%, transparent 100%);opacity:0.85;object-fit:cover;aspect-ratio:16/9;}
+.hero-overlap-bottom{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:-3rem;position:relative;z-index:2;align-items:end;text-align:left;animation:fade-up 1s .8s var(--ease-out) both;width:100%;}
+.hero-overlap-title{font-size:clamp(1.2rem, 3vw, 2.5rem);line-height:1.2;}
+.hero-overlap-text{font-size:0.9rem;color:rgba(240,237,232,.7);max-width:300px;justify-self:end;}
+@media(max-width:760px){.hero-overlap-bottom{grid-template-columns:1fr;margin-top:2rem;text-align:center;gap:1rem;}.hero-overlap-text{justify-self:center;text-align:center;max-width:100%;}}
 /* ABOUT */
 .about{background:var(--paper);color:var(--ink);padding:14vh 6vw 12vh;position:relative;overflow:hidden}
 .about .inner{max-width:1340px;margin:0 auto}
@@ -186,36 +193,30 @@ footer .mono{font-size:.68rem;color:var(--stone);letter-spacing:.06em}
 </nav>
 
 <section class="hero-wrap" id="heroWrap">
-  <div class="hero-sticky">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-top">
-        <div class="hero-tag">Vidrox Vidracaria</div>
-        <div class="hero-meta">Esquadrias, fachadas, box e guarda-corpos em vidro temperado. Projeto, corte e instalacao proprios &mdash; Sao Paulo.</div>
-      </div>
-      <div class="hero-bottom">
-        <div class="hero-title-wrap">
-          <div class="hero-vline"></div>
-          <h1 class="hero-h1">
-            <span class="hero-h1-line"><span>Arquitetura em vidro.</span></span>
-            <span class="hero-h1-line"><span class="thin">Precisao em cada detalhe.</span></span>
-          </h1>
-          <p class="hero-sub">Do levantamento tecnico a instalacao final &mdash; solucoes em vidro temperado sob medida para projetos residenciais e comerciais.</p>
-          <a href="#contato" class="hero-cta link-reveal">Solicitar orcamento <span class="arrow">&#8594;</span></a>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1.6rem;">
-          <div class="scroll-ind">
-            <span>SCROLL</span>
-            <div class="track"><i></i></div>
-          </div>
-          <div class="hero-progress" id="heroProgress">00%</div>
-        </div>
+  <div class="hero-content">
+    <div class="hero-top">
+      <div class="hero-tag">Vidrox Vidracaria</div>
+    </div>
+    <div class="hero-title-wrap">
+      <h1 class="hero-h1">
+        <span class="hero-h1-line"><span><span class="animate-color-theme" style="font-family:'Akira Expanded',sans-serif;text-transform:uppercase;">Arquitetura em vidro.</span></span></span>
+        <span class="hero-h1-line"><span class="thin">Precisao em cada detalhe.</span></span>
+      </h1>
+      <p class="hero-sub">Do levantamento tecnico a instalacao final &mdash; solucoes em vidro temperado sob medida para projetos residenciais e comerciais.</p>
+      
+      <div class="hero-cta-group">
+        <a href="#contato" class="hero-cta">Solicitar orcamento <span class="arrow">&#8594;</span></a>
+        <a href="#projetos" class="hero-cta-outline">Ver projetos</a>
       </div>
     </div>
-    <div class="hero-loading" id="heroLoading">
-      <span>CARREGANDO</span>
-      <div class="loading-bar"></div>
+  </div>
+
+  <div class="hero-media-wrap">
+    <img src="assets/hero-fachada.webp" alt="Vidrox Arquitetura em Vidro">
+    
+    <div class="hero-overlap-bottom">
+      <h2 class="hero-overlap-title">Solucoes<br><span class="thin" style="color:var(--stone)">criadas com proposito.</span></h2>
+      <p class="hero-overlap-text">Um portfolio onde design limpo, seguranca e acabamento impecavel se encontram.</p>
     </div>
   </div>
 </section>
@@ -253,7 +254,7 @@ footer .mono{font-size:.68rem;color:var(--stone);letter-spacing:.06em}
     <div class="products-grid">
       <div class="prod-list reveal">
         <div class="prod-row active" data-img="0" tabindex="0" role="button">
-          <span class="n">01</span><img class="prod-thumb" src="assets/produto-box.webp" alt="Box de vidro">
+          <span class="n">01</span><img class="prod-thumb" src="assets/projeto-box-hd.jpg" alt="Box de vidro">
           <span class="name">Box de Vidro</span><span class="arrow">&#8594;</span>
         </div>
         <div class="prod-row" data-img="1" tabindex="0" role="button">
@@ -278,7 +279,7 @@ footer .mono{font-size:.68rem;color:var(--stone);letter-spacing:.06em}
         </div>
       </div>
       <div class="products-visual reveal reveal-d2">
-        <img src="assets/produto-box.webp" alt="Box de vidro temperado" class="active" id="prodImg0">
+        <img src="assets/projeto-box-hd.jpg" alt="Box de vidro temperado" class="active" id="prodImg0">
         <img src="assets/produto-fachadas-hd.png" alt="Fachadas de vidro" id="prodImg1">
         <img src="assets/produto-portas.webp" alt="Portas e divisorias de vidro" id="prodImg2">
         <img src="assets/produto-guarda-corpo.webp" alt="Guarda-corpo de vidro" id="prodImg3">
@@ -358,32 +359,13 @@ footer .mono{font-size:.68rem;color:var(--stone);letter-spacing:.06em}
 
 <script>
 (function(){
-  var canvas=document.getElementById('heroCanvas'),ctx=canvas.getContext('2d'),
-      wrap=document.getElementById('heroWrap'),loading=document.getElementById('heroLoading'),
-      prog=document.getElementById('heroProgress'),nav=document.getElementById('nav');
-  var W,H,heroImg,scrollPct=0,targetX=0.5,currentX=0.5,rafId;
-  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;draw();}
-  function draw(){
-    if(!heroImg)return;ctx.clearRect(0,0,W,H);
-    var s=1+scrollPct*0.18,ir=heroImg.naturalWidth/heroImg.naturalHeight,cr=W/H,dw,dh;
-    if(ir>cr){dh=H*s;dw=dh*ir;}else{dw=W*s;dh=dw/ir;}
-    var dx=(W-dw)/2+(currentX-0.5)*20,dy=(H-dh)/2+scrollPct*80;
-    ctx.globalAlpha=Math.max(0,1-scrollPct*1.6);
-    ctx.drawImage(heroImg,dx,dy,dw,dh);ctx.globalAlpha=1;
-  }
-  function tick(){currentX+=(targetX-currentX)*0.04;draw();rafId=requestAnimationFrame(tick);}
-  var img=new Image();img.src='assets/hero-fachada.webp';
-  img.onload=function(){heroImg=img;resize();loading.classList.add('hidden');setTimeout(function(){loading.style.display='none';},750);tick();};
-  img.onerror=function(){loading.classList.add('hidden');};
+  var nav=document.getElementById('nav');
   function onScroll(){
-    var wH=wrap.offsetHeight,sH=window.innerHeight,st=window.scrollY,wt=wrap.offsetTop;
-    scrollPct=Math.max(0,Math.min(1,(st-wt)/(wH-sH)));
-    prog.textContent=(scrollPct*100|0<10?'0':'')+(scrollPct*100|0)+'%';
+    var st=window.scrollY;
     if(st>60)nav.classList.add('solid');else nav.classList.remove('solid');
   }
-  document.addEventListener('mousemove',function(e){targetX=e.clientX/window.innerWidth;});
   window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',resize);onScroll();
+  onScroll();
 })();
 
 (function(){
